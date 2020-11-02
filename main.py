@@ -7,8 +7,11 @@ def setGraph(index):
     f = open("Graph/" + index + ".txt", "r")
     graph = Graph()
     graph.nb_vertix = int(f.readline())
+    print(graph.nb_vertix)
     graph.nb_edge = int(f.readline())
+    print(graph.nb_edge)
     graph.adjMatrix = [[float('inf') for i in range(graph.nb_vertix)] for j in range(graph.nb_vertix)]
+    print(graph.adjMatrix)
     for x in range(graph.nb_edge):
         i = int(f.readline(1))
         j = int(f.readline(3))
@@ -88,7 +91,7 @@ def printPath(path, i, j):
 	print(path[i][j], end=' ')
 
 def main():
-    newGraph = setGraph("1")
+    newGraph = setGraph("2")
     print(newGraph.adjMatrix)
     printAdjacencyMatrix(newGraph)
     floydWarshall(newGraph)
