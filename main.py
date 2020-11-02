@@ -20,7 +20,7 @@ class Graph:
 #     return graph
 
 def setGraph(index):
-    f = open(index + ".txt", "r")
+    f = open("Graph/" + index + ".txt", "r")
     graph = Graph()
     graph.nb_vertix = int(f.readline())
     graph.nb_edge = int(f.readline())
