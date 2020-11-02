@@ -1,7 +1,20 @@
+
 class Graph:
     nb_vertix = 0
     nb_edge = 0
     adjMatrix = [[]]
+    index = 1
+
+print("")
+print("")
+print("          ***********************************************")
+print("          ***             - Graph Theory -            ***")
+print("          ***               GROUP 4 INT 1             ***")
+print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
+print("          ***********************************************")
+print("")
+index = input("Choose the graph: ")
+print("")
     
 def setGraph(index):
     f = open("Graph/" + index + ".txt", "r")
@@ -95,3 +108,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print("")
+print("")
