@@ -1,3 +1,4 @@
+from os import system, name 
 
 class Graph:
     nb_vertix = 0
@@ -5,16 +6,6 @@ class Graph:
     adjMatrix = [[]]
     index = 1
 
-print("")
-print("")
-print("          ***********************************************")
-print("          ***             - Graph Theory -            ***")
-print("          ***               GROUP 4 INT 1             ***")
-print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
-print("          ***********************************************")
-print("")
-index = input("Choose the graph: ")
-print("")
     
 def setGraph(index):
     f = open("Graph/" + index + ".txt", "r")
@@ -82,6 +73,7 @@ def floydWarshall(graph):
 				return
 
 	# Print the shortest path between all pairs of vertices
+	print("")
 	printSolution(path, graph.nb_vertix)
 
 def printSolution(path, nb_vertex):
@@ -101,11 +93,38 @@ def printPath(path, i, j):
 	printPath(path, i, path[i][j])
 	print(path[i][j], end=' ')
 
+def clear(): 
+  
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+  
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear') 
+
 def main():
-    newGraph = setGraph("1")
-    print(newGraph.adjMatrix)
-    printAdjacencyMatrix(newGraph)
-    floydWarshall(newGraph)
+
+	clear()
+
+	print("")
+	print("")
+	print("          ***********************************************")
+	print("          ***             - Graph Theory -            ***")
+	print("          ***               GROUP 4 INT 1             ***")
+	print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
+	print("          ***********************************************")
+	print("")
+	
+	index = (input("                    Choose the graph: "))
+
+	print("")
+	print("")
+
+	newGraph = setGraph(index)
+	print(newGraph.adjMatrix)
+	printAdjacencyMatrix(newGraph)
+	floydWarshall(newGraph)
 
 if __name__ == "__main__":
     main()
