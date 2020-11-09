@@ -106,25 +106,44 @@ def clear():
 def main():
 
 	clear()
+	validity = 1
 
-	print("")
-	print("")
-	print("          ***********************************************")
-	print("          ***             - Graph Theory -            ***")
-	print("          ***               GROUP 4 INT 1             ***")
-	print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
-	print("          ***********************************************")
-	print("")
+	while(validity):
+		print("")
+		print("")
+		print("          ***********************************************")
+		print("          ***             - Graph Theory -            ***")
+		print("          ***               GROUP 2 INT 1             ***")
+		print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
+		print("          ***********************************************")
+		print("")
+		
+		while True:
+			try:
+				index = int(input("Choose the graph: "))
+			except ValueError:
+				print("The number must be between 1 and 13")
+				continue
+			if index < 1 or index > 13:
+				print("The number must be between 1 and 13")
+				continue
+			else:
+				break
+		print("")
+		print("")
+
+		newGraph = setGraph(str(index))
+		print(newGraph.adjMatrix)
+		printAdjacencyMatrix(newGraph)
+		floydWarshall(newGraph)
+
+		test = input("Do you want to test another graph ? Y/N: ")
+		while((test.upper() != 'Y') and (test.upper() != 'N')):
+			test = input("Please enter the letter Y or N: ")
+
+		if(test == 'N' or test == 'n'):
+			validity = 0
 	
-	index = (input("                    Choose the graph: "))
-
-	print("")
-	print("")
-
-	newGraph = setGraph(index)
-	print(newGraph.adjMatrix)
-	printAdjacencyMatrix(newGraph)
-	floydWarshall(newGraph)
 
 if __name__ == "__main__":
     main()
