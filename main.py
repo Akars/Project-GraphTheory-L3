@@ -69,7 +69,7 @@ def floydWarshall(graph):
 			# if diagonal elements become negative, the
 			# graph contains a negative weight cycle
 			if cost[v][v] < 0:
-				print("Negative Weight Cycle Found")
+				print("Absorbent cycle found")
 				return
 
 	# Print the shortest path between all pairs of vertices
