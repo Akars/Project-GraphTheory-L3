@@ -111,7 +111,7 @@ def main():
 	print("")
 	print("          ***********************************************")
 	print("          ***             - Graph Theory -            ***")
-	print("          ***               GROUP 4 INT 1             ***")
+	print("          ***               GROUP 2 INT 1             ***")
 	print("          **VictorGARNIER * WilliamLI * VictorineRICHARD*")
 	print("          ***********************************************")
 	print("")
