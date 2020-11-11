@@ -1,7 +1,7 @@
 from os import system, name 
 
 class Graph:
-    nb_vertix = 0
+    nb_vertex = 0
     nb_edge = 0
     adjMatrix = [[]]
     index = 1
@@ -10,71 +10,58 @@ class Graph:
 def setGraph(index):
     f = open("Graph/" + index + ".txt", "r")
     graph = Graph()
-    graph.nb_vertix = int(f.readline())
+    graph.nb_vertex = int(f.readline())
     graph.nb_edge = int(f.readline())
-    graph.adjMatrix = [[float('inf') for i in range(graph.nb_vertix)] for j in range(graph.nb_vertix)]
+    graph.adjMatrix = [[float('inf') for i in range(graph.nb_vertex)] for j in range(graph.nb_vertex)]
 
     for x in range(graph.nb_edge):
         i = int(f.readline(1))
         j = int(f.readline(3))
         graph.adjMatrix[i][j] = int(f.readline(5))
-    for i in range(graph.nb_vertix):
-        for j in range(graph.nb_vertix):
+    for i in range(graph.nb_vertex):
+        for j in range(graph.nb_vertex):
             if(i == j):
                 graph.adjMatrix[i][j] = 0
     f.close()
     return graph
 
-def printAdjacencyMatrix(graph):
+def printAdjacencyMatrix(matrix):
     print('', end = '\t')
-    for i in range(graph.nb_vertix):
+    for i in range(len(matrix)):
         print(i, end = '\t')
     print('')
-    for i in range(graph.nb_vertix):
+    for i in range(len(matrix)):
         print(i, end = '\t')
-        for j in range(graph.nb_vertix):
-            print(graph.adjMatrix[i][j], end = '\t')
+        for j in range(len(matrix)):
+            print(matrix[i][j], end = '\t')
         print('')
-    
+   
 def floydWarshall(graph):
 
-	# cost and parent matrix stores shortest-path
-	# (shortest-cost/shortest route) information
+	dist = graph.adjMatrix.copy()
+	path = [[None for x in range(graph.nb_vertex)] for y in range(graph.nb_vertex)] #matrice path n x n
 
-	# initially cost would be same as weight of the edge
-	cost = graph.adjMatrix.copy()
-	path = [[None for x in range(graph.nb_vertix)] for y in range(graph.nb_vertix)]
-
-	# initialize cost and parent
-	for i in range(graph.nb_vertix):
-		for j in range(graph.nb_vertix):
-			if i == j:
+	for i in range(graph.nb_vertex):
+		for j in range(graph.nb_vertex):
+			if(i == j):
 				path[i][j] = 0
-			elif cost[i][j] != float('inf'):
+			elif(dist[i][j] != float('inf')):
 				path[i][j] = i
 			else:
 				path[i][j] = -1
-
-	# run Floyd-Warshall
-	for k in range(graph.nb_vertix):
-		for v in range(graph.nb_vertix):
-			for u in range(graph.nb_vertix):
-				# If vertex k is on the shortest path from v to u,
-				# then update the value of cost[v][u], path[v][u]
-				if cost[v][k] != float('inf') and cost[k][u] != float('inf') \
-						and (cost[v][k] + cost[k][u] < cost[v][u]):
-					cost[v][u] = cost[v][k] + cost[k][u]
-					path[v][u] = path[k][u]
-
-			# if diagonal elements become negative, the
-			# graph contains a negative weight cycle
-			if cost[v][v] < 0:
+	
+	for k in range(graph.nb_vertex):
+		for i in range(graph.nb_vertex):
+			for j in range(graph.nb_vertex):
+				if(dist[i][j] > dist[i][k] + dist[k][j]):
+					dist[i][j] = dist[i][k] + dist[k][j]
+					path[i][j] = path[k][j]
+			if (dist[i][i] < 0):
 				print("Absorbent cycle found")
 				return
-
-	# Print the shortest path between all pairs of vertices
 	print("")
-	printSolution(path, graph.nb_vertix)
+	printSolution(path, graph.nb_vertex)
+
 
 def printSolution(path, nb_vertex):
 
@@ -134,7 +121,7 @@ def main():
 
 		newGraph = setGraph(str(index))
 		print(newGraph.adjMatrix)
-		printAdjacencyMatrix(newGraph)
+		printAdjacencyMatrix(newGraph.adjMatrix)
 		floydWarshall(newGraph)
 
 		test = input("Do you want to test another graph ? Y/N: ")
