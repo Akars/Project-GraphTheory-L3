@@ -1,0 +1,51 @@
+          ***********************************************
+          ***             - Graph Theory -            ***
+          ***               GROUP 2 INT 1             ***
+          **VictorGARNIER * WilliamLI * VictorineRICHARD*
+          ***********************************************
+
+Choose the graph: 7
+
+Raw Data:
+[[0, 2, -5, inf, inf, inf, inf], [inf, 0, -3, 3, inf, inf, inf], [7, 4, 0, 3, inf, inf, inf], [inf, inf, 2, 0, inf, inf, inf], [inf, inf, inf, inf, 0, 5, inf], [inf, inf, inf, 
+inf, 2, 0, -2], [inf, inf, inf, inf, inf, inf, 0]]
+
+The adjacency matrix:
+        0       1       2       3       4       5       6
+0       0       2       -5      inf     inf     inf     inf
+1       inf     0       -3      3       inf     inf     inf
+2       7       4       0       3       inf     inf     inf
+3       inf     inf     2       0       inf     inf     inf
+4       inf     inf     inf     inf     0       5       inf
+5       inf     inf     inf     inf     2       0       -2
+6       inf     inf     inf     inf     inf     inf     0
+
+Final matrix:
+        0       1       2       3       4       5       6
+0       0       -1      -5      -2      inf     inf     inf
+1       4       0       -3      0       inf     inf     inf
+2       7       4       0       3       inf     inf     inf
+3       9       6       2       0       inf     inf     inf
+4       inf     inf     inf     inf     0       5       3
+5       inf     inf     inf     inf     2       0       -2
+6       inf     inf     inf     inf     inf     inf     0
+
+The Shortest paths:
+Shortest Path from 0 -> 1 is (0 2 1) the final weight is:  -1
+Shortest Path from 0 -> 2 is (0 2) the final weight is:  -5
+Shortest Path from 0 -> 3 is (0 2 3) the final weight is:  -2
+Shortest Path from 1 -> 0 is (1 2 0) the final weight is:  4
+Shortest Path from 1 -> 2 is (1 2) the final weight is:  -3
+Shortest Path from 1 -> 3 is (1 2 3) the final weight is:  0
+Shortest Path from 2 -> 0 is (2 0) the final weight is:  7
+Shortest Path from 2 -> 1 is (2 1) the final weight is:  4
+Shortest Path from 2 -> 3 is (2 3) the final weight is:  3
+Shortest Path from 3 -> 0 is (3 2 0) the final weight is:  9
+Shortest Path from 3 -> 1 is (3 2 1) the final weight is:  6
+Shortest Path from 3 -> 2 is (3 2) the final weight is:  2
+Shortest Path from 4 -> 5 is (4 5) the final weight is:  5
+Shortest Path from 4 -> 6 is (4 5 6) the final weight is:  3
+Shortest Path from 5 -> 4 is (5 4) the final weight is:  2
+Shortest Path from 5 -> 6 is (5 6) the final weight is:  -2
+
+Do you want to test another graph ? Y/N:
