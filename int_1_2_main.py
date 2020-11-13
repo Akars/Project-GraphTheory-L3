@@ -1,4 +1,5 @@
 from os import system, name 
+import sys
 
 class Graph:
     nb_vertex = 0
@@ -131,6 +132,7 @@ def main():
 				continue
 			else:
 				break
+		#open the file execution
 		print("")
 		print("Raw Data:")
 		newGraph = setGraph(str(index))
@@ -143,10 +145,10 @@ def main():
 		test = input("Do you want to test another graph ? Y/N: ")
 		while((test.upper() != 'Y') and (test.upper() != 'N')):
 			test = input("Please enter the letter Y or N: ")
-
+		
 		if(test == 'N' or test == 'n'):
 			validity = 0
-	
+		
 
 if __name__ == "__main__":
     main()
