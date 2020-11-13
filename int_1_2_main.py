@@ -40,11 +40,12 @@ def floydWarshall(graph):
 	dist = graph.adjMatrix.copy()
 	path = [[None for x in range(graph.nb_vertex)] for y in range(graph.nb_vertex)] #matrice path n x n
 
+#Initialization of Path
 	for i in range(graph.nb_vertex):
 		for j in range(graph.nb_vertex):
 			if(i == j):
 				path[i][j] = 0
-			elif(dist[i][j] != float('inf')):
+			elif(dist[i][j] != float('inf')): 
 				path[i][j] = i
 			else:
 				path[i][j] = -1
@@ -59,6 +60,8 @@ def floydWarshall(graph):
 				print("Absorbent cycle found")
 				return
 	print("")
+	print("Final matrix: ")
+	printAdjacencyMatrix(dist)
 	printSolution(path, dist, graph.nb_vertex)
 
 
