@@ -1,9 +1,7 @@
-
-Raw Data:
 [[0, 1, 5, inf], [inf, 0, -3, 5], [inf, inf, 0, 2], [inf, inf, inf, 0]]
 
 The adjacency matrix:
-	      0        1        2        3  
+        0       1       2       3 
 0       0       1       5     inf 
 1     inf       0      -3       5 
 2     inf     inf       0       2 
@@ -11,32 +9,32 @@ The adjacency matrix:
 
 ******************** Floyd Warshall ********************
 
-T0
-	      0        1        2        3  
+A0
+        0       1       2       3 
 0       0       1       5     inf 
 1     inf       0      -3       5 
 2     inf     inf       0       2 
 3     inf     inf     inf       0 
 
 
-T1
-	      0        1        2        3  
+A1
+        0       1       2       3 
 0       0       1      -2       6 
 1     inf       0      -3       5 
 2     inf     inf       0       2 
 3     inf     inf     inf       0 
 
 
-T2
-	      0        1        2        3  
+A2
+        0       1       2       3 
 0       0       1      -2       0 
 1     inf       0      -3      -1 
 2     inf     inf       0       2 
 3     inf     inf     inf       0 
 
 
-T3
-	      0        1        2        3  
+A3
+        0       1       2       3 
 0       0       1      -2       0 
 1     inf       0      -3      -1 
 2     inf     inf       0       2 

@@ -1,31 +1,63 @@
-          ***********************************************
-          ***             - Graph Theory -            ***
-          ***               GROUP 2 INT 1             ***
-          **VictorGARNIER * WilliamLI * VictorineRICHARD*
-          ***********************************************
-
-Choose the graph: 12
-
-Raw Data:
 [[0, inf, 2, 1, inf], [1, 0, inf, inf, 1], [inf, inf, 0, -2, inf], [inf, inf, 7, 0, 4], [inf, 3, -1, inf, 0]]
 
 The adjacency matrix:
-        0       1       2       3       4
-0       0       inf     2       1       inf
-1       1       0       inf     inf     1
-2       inf     inf     0       -2      inf
-3       inf     inf     7       0       4
-4       inf     3       -1      inf     0
+        0       1       2       3       4 
+0       0     inf       2       1     inf 
+1       1       0     inf     inf       1 
+2     inf     inf       0      -2     inf 
+3     inf     inf       7       0       4 
+4     inf       3      -1     inf       0 
 
-Final matrix:
-        0       1       2       3       4
-0       0       7       2       0       4
-1       1       0       0       -2      1
-2       6       5       0       -2      2
-3       8       7       3       0       4
-4       4       3       -1      -3      0
+******************** Floyd Warshall ********************
 
-The Shortest paths:
+A0
+        0       1       2       3       4 
+0       0     inf       2       1     inf 
+1       1       0       3       2       1 
+2     inf     inf       0      -2     inf 
+3     inf     inf       7       0       4 
+4     inf       3      -1     inf       0 
+
+
+A1
+        0       1       2       3       4 
+0       0     inf       2       1     inf 
+1       1       0       3       2       1 
+2     inf     inf       0      -2     inf 
+3     inf     inf       7       0       4 
+4       4       3      -1       5       0 
+
+
+A2
+        0       1       2       3       4 
+0       0     inf       2       0     inf 
+1       1       0       3       1       1 
+2     inf     inf       0      -2     inf 
+3     inf     inf       7       0       4 
+4       4       3      -1      -3       0 
+
+
+A3
+        0       1       2       3       4 
+0       0     inf       2       0       4 
+1       1       0       3       1       1 
+2     inf     inf       0      -2       2 
+3     inf     inf       7       0       4 
+4       4       3      -1      -3       0 
+
+
+A4
+        0       1       2       3       4 
+0       0       7       2       0       4 
+1       1       0       0      -2       1 
+2       6       5       0      -2       2 
+3       8       7       3       0       4 
+4       4       3      -1      -3       0 
+
+
+********************************************************
+
+The Shortest paths: 
 Shortest Path from 0 -> 1 is (0 2 3 4 1) the final weight is:  7
 Shortest Path from 0 -> 2 is (0 2) the final weight is:  2
 Shortest Path from 0 -> 3 is (0 2 3) the final weight is:  0
@@ -47,4 +79,3 @@ Shortest Path from 4 -> 1 is (4 1) the final weight is:  3
 Shortest Path from 4 -> 2 is (4 2) the final weight is:  -1
 Shortest Path from 4 -> 3 is (4 2 3) the final weight is:  -3
 
-Do you want to test another graph ? Y/N:

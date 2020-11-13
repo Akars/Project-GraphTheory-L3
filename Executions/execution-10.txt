@@ -1,20 +1,51 @@
-          ***********************************************
-          ***             - Graph Theory -            ***
-          ***               GROUP 2 INT 1             ***
-          **VictorGARNIER * WilliamLI * VictorineRICHARD*
-          ***********************************************
-
-Choose the graph: 10
-
-Raw Data:
 [[0, 1, 2, 1, inf], [inf, 0, inf, inf, inf], [inf, inf, 0, -2, inf], [inf, inf, inf, 0, 4], [inf, 3, -7, inf, 0]]
 
 The adjacency matrix:
-        0       1       2       3       4
-0       0       1       2       1       inf
-1       inf     0       inf     inf     inf
-2       inf     inf     0       -2      inf
-3       inf     inf     inf     0       4
-4       inf     3       -7      inf     0
+        0       1       2       3       4 
+0       0       1       2       1     inf 
+1     inf       0     inf     inf     inf 
+2     inf     inf       0      -2     inf 
+3     inf     inf     inf       0       4 
+4     inf       3      -7     inf       0 
+
+******************** Floyd Warshall ********************
+
+A0
+        0       1       2       3       4 
+0       0       1       2       1     inf 
+1     inf       0     inf     inf     inf 
+2     inf     inf       0      -2     inf 
+3     inf     inf     inf       0       4 
+4     inf       3      -7     inf       0 
+
+
+A1
+        0       1       2       3       4 
+0       0       1       2       1     inf 
+1     inf       0     inf     inf     inf 
+2     inf     inf       0      -2     inf 
+3     inf     inf     inf       0       4 
+4     inf       3      -7     inf       0 
+
+
+A2
+        0       1       2       3       4 
+0       0       1       2       0     inf 
+1     inf       0     inf     inf     inf 
+2     inf     inf       0      -2     inf 
+3     inf     inf     inf       0       4 
+4     inf       3      -7      -9       0 
+
+
+A3
+        0       1       2       3       4 
+0       0       1       2       0       4 
+1     inf       0     inf     inf     inf 
+2     inf     inf       0      -2       2 
+3     inf     inf     inf       0       4 
+4     inf       3      -7      -9      -5 
+
+
+A4
 Absorbent cycle found
-Do you want to test another graph ? Y/N:
+
