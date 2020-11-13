@@ -36,7 +36,8 @@ def printAdjacencyMatrix(matrix):
         print('')
    
 def floydWarshall(graph):
-
+	print("")
+	print("******************** Floyd Warshall ********************")
 	dist = graph.adjMatrix.copy()
 	path = [[None for x in range(graph.nb_vertex)] for y in range(graph.nb_vertex)] #matrice path n x n
 
@@ -59,13 +60,16 @@ def floydWarshall(graph):
 			if (dist[i][i] < 0):
 				print("Absorbent cycle found")
 				return
+		print("")
+		print("T", k)
+		printAdjacencyMatrix(dist)
+		print("")
 	print("")
-	print("Final matrix: ")
-	printAdjacencyMatrix(dist)
+	print("********************************************************")
 	print("")
 	print("The Shortest paths: ")
 	printSolution(path, dist, graph.nb_vertex)
-	print("")
+
 
 
 def printSolution(path, matrix, nb_vertex):
@@ -116,12 +120,12 @@ def main():
 		
 		while True:
 			try:
-				index = int(input("Choose the graph: "))
+				index = int(input("		        Choose the graph: "))
 			except ValueError:
-				print("The number must be between 1 and 13")
+				print("       The number must be between 1 and 13")
 				continue
 			if index < 1 or index > 13:
-				print("The number must be between 1 and 13")
+				print("       The number must be between 1 and 13")
 				continue
 			else:
 				break
@@ -133,7 +137,7 @@ def main():
 		print("The adjacency matrix:")
 		printAdjacencyMatrix(newGraph.adjMatrix)
 		floydWarshall(newGraph)
-
+		print("")
 		test = input("Do you want to test another graph ? Y/N: ")
 		while((test.upper() != 'Y') and (test.upper() != 'N')):
 			test = input("Please enter the letter Y or N: ")
