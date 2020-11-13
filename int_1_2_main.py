@@ -59,11 +59,12 @@ def floydWarshall(graph):
 					path[i][j] = path[k][j]
 		print("")
 		print("T" + str(k))
+		if (dist[k][k] < 0):
+				print("Absorbent cycle found")
+				return
 		printAdjacencyMatrix(dist)
 		print("")
-		if (dist[k][k] < 0):
-				print("Absorbent cycle found at T" + str(k))
-				return
+		
 		
 	print("")
 	print("********************************************************")
