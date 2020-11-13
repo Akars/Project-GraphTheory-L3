@@ -57,13 +57,14 @@ def floydWarshall(graph):
 				if(dist[i][j] > dist[i][k] + dist[k][j]):
 					dist[i][j] = dist[i][k] + dist[k][j]
 					path[i][j] = path[k][j]
-			if (dist[i][i] < 0):
-				print("Absorbent cycle found")
-				return
 		print("")
-		print("T", k)
+		print("T" + str(k))
 		printAdjacencyMatrix(dist)
 		print("")
+		if (dist[k][k] < 0):
+				print("Absorbent cycle found at T" + str(k))
+				return
+		
 	print("")
 	print("********************************************************")
 	print("")
