@@ -121,6 +121,8 @@ def main():
 
 		newGraph = setGraph(str(index))
 		print(newGraph.adjMatrix)
+		print("")
+		print("The adjacency matrix:")
 		printAdjacencyMatrix(newGraph.adjMatrix)
 		floydWarshall(newGraph)
 
