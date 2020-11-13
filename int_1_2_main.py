@@ -19,7 +19,7 @@ def setGraph(index):
         graph.adjMatrix[i][j] = int(f.readline(5))
     for i in range(graph.nb_vertex):
         for j in range(graph.nb_vertex):
-            if(i == j):
+            if(i == j and graph.adjMatrix[i][j] == float('inf')):
                 graph.adjMatrix[i][j] = 0
     f.close()
     return graph
@@ -43,7 +43,7 @@ def floydWarshall(graph):
 #Initialization of Path
 	for i in range(graph.nb_vertex):
 		for j in range(graph.nb_vertex):
-			if(i == j):
+			if(i == j and dist[i][j] == 0):
 				path[i][j] = 0
 			elif(dist[i][j] != float('inf')): 
 				path[i][j] = i
@@ -72,7 +72,12 @@ def printSolution(path, matrix, nb_vertex):
 
 	for i in range(nb_vertex):
 		for j in range(nb_vertex):
-			if i != j and path[i][j] != -1:
+			if (i != j and path[i][j] != -1):
+				print(f"Shortest Path from {i} -> {j} is ({i}", end=' ')
+				printPath(path, i, j)
+				print(f"{j})", end = ' ')
+				print("the final weight is: ", matrix[i][j])
+			if (i == j and matrix[i][j] != 0):
 				print(f"Shortest Path from {i} -> {j} is ({i}", end=' ')
 				printPath(path, i, j)
 				print(f"{j})", end = ' ')
@@ -80,7 +85,7 @@ def printSolution(path, matrix, nb_vertex):
 
 def printPath(path, i, j):
 
-	if path[i][j] == i:
+	if (path[i][j] == i):
 		return
 
 	printPath(path, i, path[i][j])
