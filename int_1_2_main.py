@@ -88,11 +88,8 @@ def printPath(path, i, j):
 
 def clear(): 
   
-    # for windows 
     if name == 'nt': 
-        _ = system('cls') 
-  
-    # for mac and linux(here, os.name is 'posix') 
+        _ = system('cls')  
     else: 
         _ = system('clear') 
 
