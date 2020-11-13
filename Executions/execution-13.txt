@@ -4,10 +4,12 @@
           **VictorGARNIER * WilliamLI * VictorineRICHARD*
           ***********************************************
 
-                    Choose the graph: 13
+Choose the graph: 13
 
-
+Raw Data:
 [[0, inf, 2, 1, inf, inf, inf, inf], [1, 0, inf, inf, 1, inf, inf, inf], [inf, inf, 0, -2, inf, inf, inf, inf], [inf, inf, 7, 0, 4, inf, inf, inf], [inf, 3, -1, inf, 0, inf, inf, inf], [inf, inf, inf, inf, inf, 0, 1, inf], [inf, inf, inf, inf, inf, -2, 0, -2], [inf, inf, inf, inf, inf, inf, inf, 0]]
+
+The adjacency matrix:
         0       1       2       3       4       5       6       7
 0       0       inf     2       1       inf     inf     inf     inf
 1       1       0       inf     inf     1       inf     inf     inf
@@ -18,3 +20,4 @@
 6       inf     inf     inf     inf     inf     -2      0       -2
 7       inf     inf     inf     inf     inf     inf     inf     0
 Absorbent cycle found
+Do you want to test another graph ? Y/N:

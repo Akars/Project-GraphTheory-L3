@@ -1,0 +1,40 @@
+          ***********************************************
+          ***             - Graph Theory -            ***
+          ***               GROUP 2 INT 1             ***
+          **VictorGARNIER * WilliamLI * VictorineRICHARD*
+          ***********************************************
+
+Choose the graph: 5
+
+Raw Data:
+[[0, 1, -5, inf], [inf, 0, -3, 2], [6, 4, 0, 2], [inf, inf, 2, 0]]
+
+The adjacency matrix:
+        0       1       2       3
+0       0       1       -5      inf
+1       inf     0       -3      2
+2       6       4       0       2
+3       inf     inf     2       0
+
+Final matrix:
+        0       1       2       3
+0       0       -1      -5      -3
+1       3       0       -3      -1
+2       6       4       0       2
+3       8       6       2       0
+
+The Shortest paths:
+Shortest Path from 0 -> 1 is (0 2 1) the final weight is:  -1     
+Shortest Path from 0 -> 2 is (0 2) the final weight is:  -5       
+Shortest Path from 0 -> 3 is (0 2 3) the final weight is:  -3     
+Shortest Path from 1 -> 0 is (1 2 0) the final weight is:  3      
+Shortest Path from 1 -> 2 is (1 2) the final weight is:  -3       
+Shortest Path from 1 -> 3 is (1 2 3) the final weight is:  -1     
+Shortest Path from 2 -> 0 is (2 0) the final weight is:  6        
+Shortest Path from 2 -> 1 is (2 1) the final weight is:  4        
+Shortest Path from 2 -> 3 is (2 3) the final weight is:  2        
+Shortest Path from 3 -> 0 is (3 2 0) the final weight is:  8      
+Shortest Path from 3 -> 1 is (3 2 1) the final weight is:  6      
+Shortest Path from 3 -> 2 is (3 2) the final weight is:  2        
+
+Do you want to test another graph ? Y/N:
