@@ -15,16 +15,16 @@ def floydWarshall(graph):
 				path[i][j] = i
 			else:
 				path[i][j] = -1
-	
+#Floyd Warshall start
 	for k in range(graph.nb_vertex):
 		for i in range(graph.nb_vertex):
 			for j in range(graph.nb_vertex):
-				if(dist[i][j] > dist[i][k] + dist[k][j]):
+				if(dist[i][j] > dist[i][k] + dist[k][j]): #Floyd Warshall algorithm
 					dist[i][j] = dist[i][k] + dist[k][j]
-					path[i][j] = path[k][j]
+					path[i][j] = path[k][j] #Modifying the heritage of the path 
 		print("")
 		print("A" + str(k))
-		if (dist[k][k] < 0):
+		if (dist[k][k] < 0): #absorbent condition
 				print("Absorbent cycle found")
 				return
 		printAdjacencyMatrix(dist)
@@ -47,13 +47,13 @@ def printSolution(path, matrix, nb_vertex):
 				printPath(path, i, j)
 				print(f"{j})", end = ' ')
 				print("the final weight is: ", matrix[i][j])
-			if (i == j and matrix[i][j] != 0):
+			if (i == j and matrix[i][j] != 0): #the condition is met only if there is a loop
 				print(f"Shortest Path from {i} -> {j} is ({i}", end=' ')
 				printPath(path, i, j)
 				print(f"{j})", end = ' ')
 				print("the final weight is: ", matrix[i][j])
 
-def printPath(path, i, j):
+def printPath(path, i, j): #recursive function that use path as an heritage matrix which gives us the path from i to j
 
 	if (path[i][j] == i):
 		return

@@ -4,27 +4,27 @@ from int_1_2_display import printAdjacencyMatrix
 from int_1_2_floydWarshall import floydWarshall
 
 
-class Graph:
+class Graph: #class Graph
     nb_vertex = 0
     nb_edge = 0
     adjMatrix = [[]]
 
     
 def setGraph(index):
-    f = open("Graph/" + index + ".txt", "r")
+    f = open("Graph/" + index + ".txt", "r") #We open the file that contain our graph
     graph = Graph()
-    graph.nb_vertex = int(f.readline())
+    graph.nb_vertex = int(f.readline()) #Initializing the nb of vertex and edges
     graph.nb_edge = int(f.readline())
-    graph.adjMatrix = [[float('inf') for i in range(graph.nb_vertex)] for j in range(graph.nb_vertex)]
+    graph.adjMatrix = [[float('inf') for i in range(graph.nb_vertex)] for j in range(graph.nb_vertex)] #Initialization of the 2D array size of vertex x vertex
 
     for x in range(graph.nb_edge):
-        i = int(f.readline(1))
-        j = int(f.readline(3))
-        graph.adjMatrix[i][j] = int(f.readline(5))
+        i = int(f.readline(1)) #taking the first row of the text file which corresponds to the parent vertex
+        j = int(f.readline(3)) #the second row corresponds to the children
+        graph.adjMatrix[i][j] = int(f.readline(5)) #The third row of the text file corresponds to the weight
     for i in range(graph.nb_vertex):
         for j in range(graph.nb_vertex):
-            if(i == j and graph.adjMatrix[i][j] == float('inf')):
-                graph.adjMatrix[i][j] = 0
+            if(i == j and graph.adjMatrix[i][j] == float('inf')): # float 'inf' => infinity 
+                graph.adjMatrix[i][j] = 0 #we initialize the diagonal of the matrix as 0 only if there is no loop 
     f.close()
     return graph
 
@@ -52,7 +52,6 @@ def menu():
 				continue
 			else:
 				break
-		#open the file execution
 		print("")
 		print("Raw Data:")
 		newGraph = setGraph(str(index))
