@@ -60,17 +60,18 @@ def floydWarshall(graph):
 				print("Absorbent cycle found")
 				return
 	print("")
-	printSolution(path, graph.nb_vertex)
+	printSolution(path, dist, graph.nb_vertex)
 
 
-def printSolution(path, nb_vertex):
+def printSolution(path, matrix, nb_vertex):
 
 	for i in range(nb_vertex):
 		for j in range(nb_vertex):
 			if i != j and path[i][j] != -1:
 				print(f"Shortest Path from {i} -> {j} is ({i}", end=' ')
 				printPath(path, i, j)
-				print(f"{j})")
+				print(f"{j})", end = ' ')
+				print("the final weight is: ", matrix[i][j])
 
 def printPath(path, i, j):
 
