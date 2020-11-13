@@ -84,6 +84,8 @@ def writeFile():
 		f = open("Executions/execution-" + str(i)+ ".txt","w")
 		sys.stdout = f
 		newGraph = setGraph(str(i))
+		print("")
+		print("Raw Data:")
 		print(newGraph.adjMatrix)
 		print("")
 		print("The adjacency matrix:")

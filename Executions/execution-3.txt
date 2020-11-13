@@ -1,3 +1,5 @@
+
+Raw Data:
 [[0, 1, -5, inf], [inf, 0, -3, 2], [inf, 4, 0, 2], [inf, inf, inf, 0]]
 
 The adjacency matrix:
