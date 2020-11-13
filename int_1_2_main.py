@@ -30,9 +30,9 @@ def printAdjacencyMatrix(matrix):
         print(i, end = '\t')
     print('')
     for i in range(len(matrix)):
-        print(i, end = '\t')
+        print(i, end = ' ')
         for j in range(len(matrix)):
-            print(matrix[i][j], end = '\t')
+            print(" " * (7 - len(str(matrix[i][j]))) + str(matrix[i][j]), end=" ")
         print('')
    
 def floydWarshall(graph):
