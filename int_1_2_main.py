@@ -62,7 +62,10 @@ def floydWarshall(graph):
 	print("")
 	print("Final matrix: ")
 	printAdjacencyMatrix(dist)
+	print("")
+	print("The Shortest paths: ")
 	printSolution(path, dist, graph.nb_vertex)
+	print("")
 
 
 def printSolution(path, matrix, nb_vertex):
@@ -94,11 +97,9 @@ def clear():
         _ = system('clear') 
 
 def main():
-
-	clear()
 	validity = 1
-
 	while(validity):
+		clear()
 		print("")
 		print("")
 		print("          ***********************************************")
@@ -120,8 +121,7 @@ def main():
 			else:
 				break
 		print("")
-		print("")
-
+		print("Raw Data:")
 		newGraph = setGraph(str(index))
 		print(newGraph.adjMatrix)
 		print("")
