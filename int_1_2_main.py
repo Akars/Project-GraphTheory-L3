@@ -4,7 +4,6 @@ class Graph:
     nb_vertex = 0
     nb_edge = 0
     adjMatrix = [[]]
-    index = 1
 
     
 def setGraph(index):
